@@ -14,15 +14,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './public/mergedAssets.js',
-        './public/mergedTests.js'
+        'public/mergedAssets.js',
+        'public/mergedTests.js'
     ],
 
     // list of files to exclude
     exclude: [
 
     ],
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'

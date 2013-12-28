@@ -1,0 +1,1 @@
+mocha --watch --colors --inline-diff --reporter spec --recursive server/tests

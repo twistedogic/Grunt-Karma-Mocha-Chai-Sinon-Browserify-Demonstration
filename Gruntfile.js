@@ -1,18 +1,25 @@
-var paths = {
-	src: 'src/',
-	dist: 'dist/'
-}
-
 module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		browserify: {
+			options:{
+				shim: {
+					jquery: {
+						path: 'lib/src/vendor/jquery.js',
+						exports: '$'
+					},
+					underscore: {
+						path: 'lib/src/vendor/underscore.js',
+						exports: '_'
+					}
+				}
+			},
 			app: {
-				src: [ paths.src + '*.js'],
+				src: ['lib/**/*.js'],
 				dest: 'public/mergedAssets.js'
 			},
 			tests: {
-				src: ['tests/helper.js', 'tests/spec/*.js'],
+				src: ['lib/tests/*.js', 'lib/tests/**/*.js'],
 				dest: 'public/mergedTests.js'
 			}
 		},
@@ -20,16 +27,15 @@ module.exports = function(grunt){
 			scripts: {
 				files: [
 					'./*.js',
-					'src/*.js',
-					'tests/*.js',
-					'tests/spec/**.js',
+					'lib/**/*.js',
+					'server/**/*.js',
 					'!public'
 				],
 				tasks: ['browserify','complexity'],
 			}
 		},
 		complexity: {
-			src: ['src/**.js'],
+			src: ['lib/**/*.js','server/**/*.js', '!lib/src/vendor/**/*.js', '!lib/tests', '!server/tests'],
 			options: {
 				breakOnErrors:false,
 				errorsOnly: false,

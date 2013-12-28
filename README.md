@@ -1,15 +1,12 @@
-Grunt-Karma-Mocha-Chai-Sinon-Browserify-Boilerplate
-===================================================
+Grunt and Karma Boilerplate
+===========================
 
-To Run:
+to install and run:
 
-`npm install -g grunt-cli`
+`npm install -g grunt-cli && npm install && grunt`
 
-`npm install`
-
-`grunt`
-
-To run the tests:
+to run the tests:
 
 `karma start karma.config.js`
 
+by (Jan Carlo Viray)[http://www.jancarloviray.com]

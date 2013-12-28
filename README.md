@@ -9,4 +9,4 @@ to run the tests:
 
 `karma start karma.config.js`
 
-by (Jan Carlo Viray)[http://www.jancarloviray.com]
+by [Jan Carlo Viray](http://www.jancarloviray.com)

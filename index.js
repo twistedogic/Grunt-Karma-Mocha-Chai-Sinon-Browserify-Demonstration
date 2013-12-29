@@ -1,1 +1,1 @@
-require('./src/index.js').start(8080);
+require('./server/src/server').createServer().startListening(8080);
